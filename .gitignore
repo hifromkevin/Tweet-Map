@@ -62,3 +62,6 @@ typings/
 
 # bundle.js build output
 bundle.js
+
+#Hide API keys
+**/config/index.js
