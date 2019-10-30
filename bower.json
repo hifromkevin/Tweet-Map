@@ -1,0 +1,10 @@
+{
+  "name": "Tweet Map",
+  "homepage": "https://github.com/hifromkevin/Tweet-Map",
+  "authors": [
+    "hifromkevin <lam.kevin86@gmail.com>"
+  ],
+  "description": "Wanna see where the Tweet you are reading is from? Look no further than this map!",
+  "main": "server/index.js",
+  "license": "MIT"
+}
