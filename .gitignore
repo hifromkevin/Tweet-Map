@@ -65,3 +65,6 @@ bundle.js
 
 #Hide API keys
 **/config/index.js
+
+#package-lock
+package-lock.json
