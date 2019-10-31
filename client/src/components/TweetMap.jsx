@@ -11,8 +11,8 @@ const TweetMap = () => {
   const dispatch = useDispatch();
 
   const defaultProps = {
-    center: {lng: -122.4194, lat: 37.7749},
-    zoom: 11
+    center: {lng: -100.4194, lat: 37.7749},
+    zoom: 3
   };
 
   return(
@@ -26,8 +26,7 @@ const TweetMap = () => {
           defaultZoom={defaultProps.zoom}
         >
         {tweets.map(tweet => {
-            console.log('tttt', tweet)
-            return <Pointer key={tweet.id} lat={defaultProps.center.lat} lng={defaultProps.center.lng} tweet={tweet} />
+            return <Pointer key={tweet.id} lat={tweet.coordinates.coordinates[1]} lng={0 - tweet.coordinates.coordinates[0]} tweet={tweet} />
           } 
         )}
 
