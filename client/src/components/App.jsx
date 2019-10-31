@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Tweets from './Tweets.jsx';
-import Map from './Map.jsx';
+import TweetMap from './TweetMap.jsx';
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
           <Tweets />
         </div>
         <div className="col-sm">
-          <Map />
+          <TweetMap />
         </div>
       </div>
     </div>
