@@ -1,6 +1,8 @@
 # Tweet-Map
 Wanna see where the Tweet you are reading is from? Look no further than this map!
 
+![Tweet Map](Tweet-Map.jpg?raw=true)
+
 ## Getting Started
 Node (Suggested v11.13.0)
   - https://nodejs.org/en/download/ 
