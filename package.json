@@ -4,7 +4,7 @@
   "description": "Wanna see where the Tweet you are reading is from? Look no further than this map!",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index",
+    "start": "nodemon server/index",
     "build": "webpack -d --watch"
   },
   "repository": {
