@@ -1,37 +1,27 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React, { Component, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTweets } from '../actions';
 
 import Tweet from './Tweet.jsx';
-import { fetchTweets } from '../actions/index'; 
 
+const Tweets = () => {
+  const tweets = useSelector(state => state.tweets);
+  const dispatch = useDispatch();
 
-class Tweets extends Component {
-  UNSAFE_componentWillMount() {
-    this.props.fetchTweets();
-  }
+  useEffect(() => {
+    dispatch(fetchTweets());
+  }, []);
 
-  render() {
-    return (
-      <div>
-        <h1>Tweets</h1>
-        {console.log(':)', this.props)}
-        <ul>
-        {this.props.tweets.map(tweet => {
-          return <Tweet tweet={tweet} key={tweet.id} />
-        })}
-        </ul>
-      </div>
-    )
-  }
-}
-
-function mapStateToProps({tweets}) {
-  return { tweets }
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchTweets }, dispatch);
+  return (
+    <div className="tweets">
+      <h1>Tweets</h1>
+      <ul>
+      {tweets.map(tweet => {
+        return <Tweet tweet={tweet} key={tweet.id} />
+      })}
+      </ul>
+    </div>
+  );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Tweets);
+export default Tweets;
