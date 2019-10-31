@@ -47,6 +47,7 @@ This application is currently set up to take all tweets from @hifromkevin, displ
 - SASS styling to provide flexibility, including keyframes and variables
 - Ability to send out a tweet using a chain of random sentence fragments concatenated together. These tweets are also assigned a random set of coordinates, which will place them on a map
 - Take coordinates provided by the Twitter API and uses them to assign a point onto a Google Map
+- Responsive layout works well on any sized device
 
 Future developments in consideration:
 - Deployment to Heroku and/or AWS
