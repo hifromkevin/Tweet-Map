@@ -1,13 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import GoogleMapReact, { Map, Marker } from 'google-map-react';
 
-const Pointer = ({ text }) => <img src={text} width="50px" />;
+import Pointer from './Pointer.jsx';
+import config from '../config';
 
 
 const TweetMap = () => {
+  const tweets = useSelector(state => state.tweets);
+  const dispatch = useDispatch();
+
   const defaultProps = {
-    center: {lat: 90, lng: 90},
-    zoom: 14
+    center: {lng: -122.4194, lat: 37.7749},
+    zoom: 11
   };
 
   return(
@@ -15,12 +20,28 @@ const TweetMap = () => {
       <h1>Map</h1>
 
       <div style={{ height: '100vh', width: '100%' }}>
-        {console.log('!!!!', defaultProps)}
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyB0TrDpLsHVCI_JfmLreGUE69vg4QhzOik" }}
-          defaultCenter={defaultProps.center}
+          bootstrapURLKeys={{ key: config.google }}
+          defaultCenter= {defaultProps.center}
           defaultZoom={defaultProps.zoom}
         >
+        {tweets.map(tweet => {
+            console.log('tttt', tweet)
+            return <Pointer key={tweet.id} lat={defaultProps.center.lat} lng={defaultProps.center.lng} tweet={tweet} />
+          } 
+        )}
+
+        </GoogleMapReact>
+      </div>
+  </div>
+
+  )
+}
+
+export default TweetMap;
+
+/*
+
           <Pointer
             lat={59.955413}
             lng={30.337844}
@@ -31,11 +52,5 @@ const TweetMap = () => {
             lng={30}
             text="https://i.pinimg.com/originals/ae/c4/53/aec453161b2f33ffc6219d8a758307a9.jpg"
           />
-        </GoogleMapReact>
-      </div>
-  </div>
 
-  )
-}
-
-export default TweetMap;
+*/
