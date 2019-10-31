@@ -1,12 +1,7 @@
 var Twitter = require('twitter');
 var config = require('../client/src/config');
-var client = new Twitter({
-  consumer_key: '1p6Z7za3oGlFYV3nZOzdt1nRO',
-  consumer_secret: 'iuWPyie0YWDz7wgX8Zf1Y1UeOXlL4V6uCKVWNWpiO9ZUtwhpMd',
-  access_token_key: '147853437-I4oVS1k5rBXluKGtjEd9GlBdqqFJFL8RUkgqmNpL',
-  access_token_secret: 'aumLkGqUtVwGDu6TLVFDFQGXiyqhiZN0l2Y3blFpRNumM',
 
-});
+var client = new Twitter(config.twitter);
 
 let opening = ['Let me show you how I', 'My dog', 'You', 'Barack Obama', 'Bob Ross', 'BILLY MAYS HERE, AND I', 'Tom Cruise', 'Almost', 'Barely', 'Totally just', 'Oh no, I', 'Cookie Monster', 'Expertly', 'Precisely', 'This one time I', 'My cousin\'s barber\'s uncle\'s friend', 'I scienced and'];
 let verb = ['mentored', 'redesigned', 'launched', 'modernized', 'valued', 'orchestrated', 'programmed', 'karated', 'exploded', 'faked', 'left in the sun', 'totally didn\'t just break'];
